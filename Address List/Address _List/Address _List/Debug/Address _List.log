@@ -1,0 +1,6 @@
+﻿  Addres.c
+c:\users\王锐\source\repos\address _list\address _list\addres.c(28): warning C4013: “memset”未定义；假设外部返回 int
+c:\users\王锐\source\repos\address _list\address _list\addres.c(65): warning C4477: “scanf”: 格式字符串“%d”需要类型“int *”的参数，但可变参数 1 拥有了类型“short *”
+  c:\users\王锐\source\repos\address _list\address _list\addres.c(65): note: 请考虑在格式字符串中使用“%hd”
+c:\users\王锐\source\repos\address _list\address _list\addres.c(87): warning C4013: “strcmp”未定义；假设外部返回 int
+  Address _List.vcxproj -> C:\Users\王锐\source\repos\Address _List\Debug\Address _List.exe
