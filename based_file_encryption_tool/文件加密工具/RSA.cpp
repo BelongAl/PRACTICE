@@ -2,6 +2,71 @@
 #include<time.h>
 #include<iostream>
 #include<math.h>
+#include<fstream>
+
+void RSA::ecrept(const char* filename, const char* fileout)//（输入文件，输出文件）
+{
+	std::ifstream fin(filename, std::ifstream::binary);//构建输入文件流对象 // 按照二进制打开
+	std::ofstream fout(fileout, std::ofstream::binary);//构建输出文件流对象
+	if (!fin.is_open())//j检查文件是否打开成功
+	{
+		perror("input file open failed");//若没打开，说明错误
+		return;
+	}
+
+	char* buffer = new char[NUMBER];//这个缓冲区用于接收加密前的数据
+	DataType *bufferOut = new DataType[NUMBER];//这个缓冲区用于接收加密后的数据
+
+	while (!fin.eof())
+	{
+		fin.read(buffer, NUMBER);//读取数据（以字节为单位）
+		int curNum = fin.gcount();//获取最近一次所读取的数量（以（读取类型(字节)大小）为单位）
+		for (int i = 0; i < curNum; i++)
+		{
+			bufferOut[i] = ecrept((DataType)buffer[i], m_key.m_ekey, m_key.m_pkey);//对数据（datatype为单位）进行加密
+		}
+		fout.write((char*)bufferOut, curNum * sizeof(DataType));//写
+	}
+
+	delete[]buffer;
+	delete[]bufferOut;
+
+	fin.close();
+	fout.close();
+
+}
+
+void RSA::decrept(const char* filename, const char* fileout)//对文件进行解密
+{
+	std::ifstream fin(filename, std::ifstream::binary);//构建输入流文件对象
+	std::ofstream fout(fileout, std::ofstream::binary);//构建输出流文件对象
+	if (!fin.is_open())
+	{
+		perror("file open failed");
+		return;
+	}
+
+	DataType *buffer = new DataType[NUMBER];//解密缓冲区(输入)
+	char *bufferOut = new char[NUMBER];//输出缓冲区
+
+	while (!fin.eof())
+	{
+		fin.read((char*)buffer, NUMBER * sizeof(DataType));//读取数据
+		int num = fin.gcount();//读取数据的个数（以字节为单位）
+		num /= sizeof(DataType);//的到真正读了几个
+		for (int i = 0; i < num; i++)
+		{
+			bufferOut[i] = decrept(buffer[i], m_key.m_dkey, m_key.m_pkey);//对数据进行解密
+		}
+		fout.write(bufferOut, num);//输出
+	}
+
+	delete[]buffer;
+	delete[]bufferOut;
+
+	fout.close();
+	fin.close();
+}
 
 void RSA::getKeys()
 {

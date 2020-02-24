@@ -1,4 +1,2 @@
-﻿  RSA.cpp
-c:\users\mr.rui\source\repos\文件加密工具\文件加密工具\rsa.cpp(23): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-c:\users\mr.rui\source\repos\文件加密工具\文件加密工具\rsa.cpp(56): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-  文件加密工具.vcxproj -> C:\Users\Mr.rui\source\repos\文件加密工具\Debug\文件加密工具.exe
+﻿  test.cpp
+  文件加密工具.vcxproj -> C:\Users\Mr.rui\Desktop\大复习\项目\文件加密工具\Debug\文件加密工具.exe

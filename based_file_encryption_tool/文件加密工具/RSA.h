@@ -13,6 +13,7 @@
 
 #pragma once
 
+#define NUMBER 256
 typedef long DataType;
 
 struct Key//密钥结构
@@ -25,7 +26,20 @@ struct Key//密钥结构
 class RSA
 {
 	Key m_key;
+
 public:
+
+	RSA()
+	{
+		getKeys();
+	}
+	void getKeys();
+
+	void ecrept(const char* filename, const char* fileout);//对文件进行加密
+	void decrept(const char* filename, const char* fileout);//对文件进行解密
+
+private:
+
 	DataType ecrept(DataType data, DataType ekey, DataType pkey);//加密
 	DataType decrept(DataType data, DataType dkey, DataType pkey);//解密
 
@@ -41,7 +55,5 @@ public:
 	DataType getEkey(DataType orla);//求e
 	DataType getDkey(DataType orla, DataType ekey);//求d
 	DataType getGcd(DataType data1, DataType data2);//求最大公约数
-
-	void getKeys();
-		
+	
 };

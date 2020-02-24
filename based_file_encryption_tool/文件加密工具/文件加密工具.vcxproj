@@ -115,9 +115,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="bigint.h" />
     <ClInclude Include="RSA.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="bigint.cpp" />
     <ClCompile Include="RSA.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
