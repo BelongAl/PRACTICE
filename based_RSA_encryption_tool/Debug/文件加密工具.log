@@ -1,2 +1,26 @@
-﻿  test.cpp
+﻿  RSA.cpp
+  Unknown compiler version - please run the configure tests and report the results
+e:\vs_2013\boost_1_58_0\boost_1_58_0\boost\format\alt_sstream_impl.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+c:\users\mr.rui\desktop\大复习\项目\文件加密工具\文件加密工具\rsa.cpp(23): warning C4244: “初始化”: 从“std::streamsize”转换到“int”，可能丢失数据
+c:\users\mr.rui\desktop\大复习\项目\文件加密工具\文件加密工具\rsa.cpp(55): warning C4244: “初始化”: 从“std::streamsize”转换到“int”，可能丢失数据
+c:\users\mr.rui\desktop\大复习\项目\文件加密工具\文件加密工具\rsa.cpp(113): warning C4244: “参数”: 从“time_t”转换到“const UIntType”，可能丢失数据
+          with
+          [
+              UIntType=uint32_t
+          ]
+c:\users\mr.rui\desktop\大复习\项目\文件加密工具\文件加密工具\rsa.cpp(128): warning C4244: “参数”: 从“time_t”转换到“const UIntType”，可能丢失数据
+          with
+          [
+              UIntType=uint32_t
+          ]
+c:\users\mr.rui\desktop\大复习\项目\文件加密工具\文件加密工具\rsa.cpp(131): warning C4390: “;”: 找到空的受控语句；这是否是有意的?
+c:\users\mr.rui\desktop\大复习\项目\文件加密工具\文件加密工具\rsa.cpp(162): warning C4244: “参数”: 从“time_t”转换到“const UIntType”，可能丢失数据
+          with
+          [
+              UIntType=uint32_t
+          ]
+  test.cpp
+  Unknown compiler version - please run the configure tests and report the results
+e:\vs_2013\boost_1_58_0\boost_1_58_0\boost\format\alt_sstream_impl.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  正在生成代码...
   文件加密工具.vcxproj -> C:\Users\Mr.rui\Desktop\大复习\项目\文件加密工具\Debug\文件加密工具.exe

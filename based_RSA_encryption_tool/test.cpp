@@ -1,10 +1,14 @@
-#include"RSA.h"
 #include<iostream>
 #include<fstream>
+#include<boost/multiprecision/cpp_int.hpp>
+
 #include"bigint.h"
+#include"RSA.h"
 
+using namespace std;
 
-/*void RSAtest1()
+/*
+void RSAtest1()
 {
 	RSA rs;
 	rs.getKeys();
@@ -15,6 +19,8 @@
 
 	std::cout << socurcenumber << " " << edata << " " << ddata << std::endl;
 }
+*/
+
 
 void RSAtest2()
 {
@@ -23,9 +29,9 @@ void RSAtest2()
 	rs.ecrept("test.txt", "ecrept.txt");//¼ÓÃÜ
 	rs.decrept("ecrept.txt", "decrept.txt");//½âÃÜ
 
-}*/
+}
 
-using namespace std;
+/*
 
 void biginttest1()
 {
@@ -58,11 +64,30 @@ void biginttest1()
 	cout << b1 % b2 << endl;
 }
 
+void testBigInt()
+{
+	boost::multiprecision::int1024_t c2(1);
+	cout << c2*c2 << endl;
+	boost::multiprecision::int1024_t cpp1024_t = c2 << 1023;
+	cout << "cpp1024_t = " << cpp1024_t << endl;
+	for(int i = 0; i < cpp1024_t; i++)
+	{ }
+}
+
+void testBoostRandom()
+{
+	boost::random::mt19937 gen(time(NULL));
+	boost::random::uniform_int_distribution<DataType> dist(0, DataType(1)<<1023);
+	for (int i = 0; i < 10000; i++)
+	{
+		std::cout << dist(gen) << std::endl;
+	}
+}
+*/
 
 int main()
 {
-	biginttest1();
-
+	RSAtest2();
 	system("pause");
 	return 0;
 }

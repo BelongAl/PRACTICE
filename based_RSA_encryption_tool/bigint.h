@@ -29,5 +29,7 @@ public:
 	std::string mul(std::string num1, std::string num2);//*
 	std::pair<std::string, std::string> dev(std::string num1,  std::string num2);///
 	bool less(std::string num1, std::string num2);
+	//产生随机数
+	//素数检查
 
 };

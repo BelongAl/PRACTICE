@@ -13,8 +13,15 @@
 
 #pragma once
 
+#include<boost/multiprecision/cpp_int.hpp>//大数
+#include<boost/multiprecision/random.hpp>//随机数
+#include<boost/multiprecision/miller_rabin.hpp>//素数处理函数
+
 #define NUMBER 256
-typedef long DataType;
+//typedef long DataType;
+typedef boost::multiprecision::int1024_t DataType;
+
+namespace brdm = boost::random;
 
 struct Key//密钥结构
 {
@@ -49,11 +56,13 @@ private:
 	}
 
 	DataType getPrime();//产生素数
-	bool isPrime(DataType data);//判断是否为素数
+	//bool isPrime(DataType data);//判断是否为素数
+	bool isPrimeBigInt(DataType data);
 	DataType getPkey(DataType prime1, DataType prime2);//求n
 	DataType getOrla(DataType prime1, DataType prime2);//求欧拉
 	DataType getEkey(DataType orla);//求e
 	DataType getDkey(DataType orla, DataType ekey);//求d
 	DataType getGcd(DataType data1, DataType data2);//求最大公约数
+	DataType exGcd(DataType a, DataType b, DataType &x, DataType &y);//求最大公约数,欧几里得算法的扩展
 	
 };
